@@ -56,8 +56,7 @@ func SetProvisioner(p spawn.Provisioner) {
 	spawn.SetProvisioner(p)
 }
 
-/*
-Use LockThread on the main thread in lieue of a webserver or some other service that holds the thread
+/* LockThread: Use LockThread on the main thread in lieue of a webserver or some other service that holds the thread
 This is primarily used when Thrust and just Thrust is what you are using, in that case lock the thread.
 Otherwise, why dont you start an http server, and expose some websockets.
 */
@@ -68,37 +67,32 @@ func LockThread() {
 	}
 }
 
-/*
-Initialize and Enable the internal *log.Logger.
+/* InitLogger: Initialize and Enable the internal *log.Logger.
 */
 func InitLogger() {
 	common.InitLogger("")
 }
 
-/*
-Disable the internal *log.Logger instance
+/* DisableLogger: Disable the internal *log.Logger instance
 */
 func DisableLogger() {
 	common.InitLogger("none")
 }
 
-/*
-ALWAYS use this method instead of os.Exit()
+/* Exit: ALWAYS use this method instead of os.Exit()
 This method will handle destroying the child process, and exiting as cleanly as possible.
 */
 func Exit() {
 	connection.CleanExit()
 }
 
-/*
-Sets the Application Name
+/* SetApplicationName: Sets the Application Name
 */
 func SetApplicationName(name string) {
 	spawn.ApplicationName = name
 }
 
-/*
-Create a new EventHandler for a give event.
+/* NewEventHandler: Create a new EventHandler for a give event.
 */
 func NewEventHandler(event string, fn interface{}) (events.ThrustEventHandler, error) {
 	return events.NewHandler(event, fn)

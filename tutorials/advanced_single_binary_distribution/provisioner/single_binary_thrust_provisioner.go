@@ -22,8 +22,7 @@ func NewSingleBinaryThrustProvisioner() SingleBinaryThrustProvisioner {
 	return SingleBinaryThrustProvisioner{}
 }
 
-/*
-Provisions a thrust environment based on settings.
+/* Provision: Provisions a thrust environment based on settings.
 */
 func (sbtp SingleBinaryThrustProvisioner) Provision() error {
 	err := sbtp.extractToPath(spawn.GetDownloadPath())

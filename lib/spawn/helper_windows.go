@@ -14,8 +14,7 @@ func GetThrustDirectory() string {
 	return filepath.Join(base, "vendor", "windows", "ia32", thrustVersion)
 }
 
-/*
-GetDownloadDirectory gets the download or extract directory for Thrust
+/* GetDownloadPath gets the download or extract directory for Thrust
 */
 func GetDownloadPath() string {
 	return strings.Replace(filepath.Join(base, "$V"), "$V", thrustVersion, 1)

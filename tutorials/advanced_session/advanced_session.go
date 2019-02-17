@@ -56,8 +56,7 @@ func NewSimpleSession() (ss SimpleSession) {
 	return ss
 }
 
-/*
-For Simplicity type declarations
+/* InvokeCookiesLoad: For Simplicity type declarations
 */
 func (ss SimpleSession) InvokeCookiesLoad(args *commands.CommandResponseArguments, s *session.Session) (cookies []session.Cookie) {
 	common.Log.Print("InvokeCookiesLoad")

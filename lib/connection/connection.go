@@ -38,8 +38,7 @@ type Out struct {
 var in In
 var out Out
 
-/*
-Initializes threads with Channel Structs
+/* InitializeThreads: Initializes threads with Channel Structs
 Opens Connection
 */
 func InitializeThreads() {

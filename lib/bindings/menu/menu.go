@@ -37,8 +37,7 @@ type Menu struct {
 	ReplyHandlers    map[uint]func(reply CommandResponse, item *MenuItem) `json:"_"`
 }
 
-/*
-Create a new menu object.
+/* NewMenu: Create a new menu object.
 Dispatches a call to ThrustCore to generate the object and return the new
 TargetID in a reply.
 */
@@ -509,8 +508,7 @@ func (menu *Menu) SetVisible(commandID uint, visible bool) {
 	menu.CallWhenDisplayed(&command)
 }
 
-/*
-AddSeperator adds a Seperator Item to both the internal representation of menu and the external representation of menu.
+/* AddSeparator adds a Seperator Item to both the internal representation of menu and the external representation of menu.
 */
 func (menu *Menu) AddSeparator() {
 	command := Command{
@@ -570,8 +568,7 @@ func (menu *Menu) IsStable() bool {
 	return menu.Ready && len(menu.WaitingResponses) == 0
 }
 
-/*
-A Menu Tree is considered stable if and only if its children nodes report that they are stable.
+/* IsTreeStable: A Menu Tree is considered stable if and only if its children nodes report that they are stable.
 Function is recursive, so factor that in to performance
 */
 func (menu *Menu) IsTreeStable() bool {
@@ -614,8 +611,7 @@ func (menu *Menu) RegisterEventHandlerByCommandID(commandID uint, handler func(r
 	}
 }
 
-/*
-Find all menu items that belong to group identified by groupID
+/* RadioGroupAtGroupID: Find all menu items that belong to group identified by groupID
 Not recursive, as a group should be identified at the same level.
 Since it is not recursive you can theoretically reuse a groupID but problems
 could creep up elsewhere, so please use unique groupID for radio items
@@ -631,8 +627,7 @@ func (menu *Menu) RadioGroupAtGroupID(groupID uint) []*MenuItem {
 	return group
 }
 
-/*
-DEBUG Functions
+/* PrintRecursiveWaitingResponses: DEBUG Functions
 */
 func (menu Menu) PrintRecursiveWaitingResponses() {
 	Log.Print("Scanning Menu(", menu.TargetID, ")")

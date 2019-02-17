@@ -11,8 +11,7 @@ func NewDummySession() (dummy *DummySession) {
 	return &DummySession{}
 }
 
-/*
-For Simplicity type declarations
+/* InvokeCookiesLoad: For Simplicity type declarations
 */
 func (ds DummySession) InvokeCookiesLoad(args *commands.CommandResponseArguments, session *Session) (cookies []Cookie) {
 	common.Log.Print("InvokeCookiesLoad")

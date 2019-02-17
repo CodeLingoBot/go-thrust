@@ -46,8 +46,7 @@ func GetDownloadURL() string {
 	return "https://github.com/breach/thrust/releases/download/v$V/thrust-v$V-darwin-x64.zip"
 }
 
-/*
-SetThrustApplicationTitle sets the title in the Info.plist. This method only exists on Darwin.
+/* Bootstrap: sets the title in the Info.plist. This method only exists on Darwin.
 */
 func Bootstrap() error {
 	if ExecutableNotExist() == true {

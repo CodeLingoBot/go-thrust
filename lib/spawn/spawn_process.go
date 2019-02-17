@@ -47,8 +47,7 @@ func SetBaseDirectory(dir string) error {
 	return nil
 }
 
-/*
-The SpawnThrustCore method is a bootstrap and run method.
+/* Run: The SpawnThrustCore method is a bootstrap and run method.
 It will try to detect an installation of thrust, if it cannot find it
 it will download the version of Thrust detailed in the "common" package.
 Once downloaded, it will launch a process.

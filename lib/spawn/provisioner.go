@@ -7,7 +7,7 @@ type Provisioner interface {
 // Package global provisioner, use SetProvisioner to set this variable
 var provisioner Provisioner
 
-// Sets the current provision to use during spawn.Run()
+// SetProvisioner: Sets the current provision to use during spawn.Run()
 func SetProvisioner(p Provisioner) {
 	provisioner = p
 }

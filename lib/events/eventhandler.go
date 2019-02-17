@@ -7,8 +7,7 @@ import (
 	"github.com/miketheprogrammer/go-thrust/lib/dispatcher"
 )
 
-/*
-Create a new EventHandler for a give event.
+/* NewHandler: Create a new EventHandler for a give event.
 */
 func NewHandler(event string, fn interface{}) (ThrustEventHandler, error) {
 	h := ThrustEventHandler{}

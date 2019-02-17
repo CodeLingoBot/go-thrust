@@ -402,8 +402,7 @@ CRorER means commands.CommandResponse or commands.EventResult
 */
 type WindowEventHandler func(CRorER interface{}, window *Window)
 
-/*
-Binding Event Handlers are a bit different than global thrust handlers.
+/* HandleEvent: Binding Event Handlers are a bit different than global thrust handlers.
 The Signature of the function you pass in is WindowEventHandler
 */
 func (w *Window) HandleEvent(event string, fn interface{}) (events.ThrustEventHandler, error) {
